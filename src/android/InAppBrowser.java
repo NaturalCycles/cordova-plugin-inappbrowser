@@ -893,7 +893,7 @@ public class InAppBrowser extends CordovaPlugin {
                 browser.setContentDescription("Browser Button");
                 browser.setId(Integer.valueOf(9));
                 browser.setBackground(getRippleBackgroundDrawable());
-                int browserResId = activityRes.getIdentifier("ic_open_in_app_black_24dp", "drawable", cordova.getActivity().getPackageName());
+                int browserResId = activityRes.getIdentifier("ic_open_in_new_black_24dp", "drawable", cordova.getActivity().getPackageName());
                 Drawable browserIcon = activityRes.getDrawable(browserResId);
                 if (navigationButtonColor != "") browser.setColorFilter(android.graphics.Color.parseColor(navigationButtonColor));
                 browser.setImageDrawable(browserIcon);
