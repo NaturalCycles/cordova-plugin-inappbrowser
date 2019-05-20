@@ -88,6 +88,12 @@
             </feature>
         </config-file>
 
+        <resource-file src="src/ios/assets/close@2x.png" />
+        <resource-file src="src/ios/assets/left@2x.png" />
+        <resource-file src="src/ios/assets/right@2x.png" />
+        <resource-file src="src/ios/assets/open@2x.png" />
+        <resource-file src="src/ios/assets/share@2x.png" />
+
         <header-file src="src/ios/CDVInAppBrowser.h" />
 	    <source-file src="src/ios/CDVInAppBrowser.m" />
         <header-file src="src/ios/CDVInAppBrowserOptions.h" />
