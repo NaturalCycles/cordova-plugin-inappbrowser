@@ -863,14 +863,6 @@ BOOL isExiting = FALSE;
     
     self.browserButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"open"] style:UIBarButtonItemStylePlain target:self action:@selector(openInBrowser:)];
     
-    if (_browserOptions.navigationbuttoncolor != nil) { // Set button color if user sets it in options
-        self.forwardButton.tintColor = [self colorFromHexString:_browserOptions.navigationbuttoncolor];
-        self.backButton.tintColor = [self colorFromHexString:_browserOptions.navigationbuttoncolor];
-        self.shareButton.tintColor = [self colorFromHexString:_browserOptions.navigationbuttoncolor];
-        self.browserButton.tintColor = [self colorFromHexString:_browserOptions.navigationbuttoncolor];
-        self.closeButton.tintColor = [self colorFromHexString:_browserOptions.navigationbuttoncolor];
-    }
-    
     // Filter out Navigation Buttons if user requests so
     if (_browserOptions.hidenavigationbuttons) {
         if (_browserOptions.lefttoright) {
@@ -899,7 +891,6 @@ BOOL isExiting = FALSE;
     [self.view addSubview:topToolbar];
     
     self.addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width - 100, 20)];
-    self.addressLabel.textColor = [self colorFromHexString:_browserOptions.navigationbuttoncolor];
     self.addressLabel.textAlignment = NSTextAlignmentCenter;
     UIBarButtonItem *typeField = [[UIBarButtonItem alloc] initWithCustomView:self.addressLabel];
     
@@ -909,6 +900,18 @@ BOOL isExiting = FALSE;
     tool.barTintColor = [self colorFromHexString:_browserOptions.toolbarcolor];
     [tool setItems:@[self.closeButton, flexibleSpaceButton, typeField, flexibleSpaceButton]];
     [topToolbar addSubview:tool];
+
+    if (_browserOptions.navigationbuttoncolor != nil) { // Set button color if user sets it in options
+        self.forwardButton.tintColor = [self colorFromHexString:_browserOptions.navigationbuttoncolor];
+        self.backButton.tintColor = [self colorFromHexString:_browserOptions.navigationbuttoncolor];
+        self.shareButton.tintColor = [self colorFromHexString:_browserOptions.navigationbuttoncolor];
+        self.browserButton.tintColor = [self colorFromHexString:_browserOptions.navigationbuttoncolor];
+    }
+
+    if (_browserOptions.closebuttoncolor != nil) {
+        self.closeButton.tintColor = [self colorFromHexString:_browserOptions.closebuttoncolor];
+        self.addressLabel.textColor = [self colorFromHexString:_browserOptions.closebuttoncolor];
+    }
 }
 
 -(UIBarPosition)positionForBar:(id<UIBarPositioning>)bar{
@@ -998,7 +1001,6 @@ BOOL isExiting = FALSE;
     [pluginResult setKeepCallback:[NSNumber numberWithBool:YES]];
     
     [self.navigationDelegate.commandDelegate sendPluginResult:pluginResult callbackId:self.navigationDelegate.callbackId];
-}
 }
 
 - (void)share:(id)sender
