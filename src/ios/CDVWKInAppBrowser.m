@@ -992,11 +992,17 @@ BOOL isExiting = FALSE;
 - (void)openInBrowser:(id)sender
 {
     [self.navigationDelegate openInSystem:self.webView.URL];
+
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
+                                                  messageAsDictionary:@{@"type":@"openinbrowser", @"url":self.currentURL.absoluteString}];
+    [pluginResult setKeepCallback:[NSNumber numberWithBool:YES]];
+    
+    [self.navigationDelegate.commandDelegate sendPluginResult:pluginResult callbackId:self.navigationDelegate.callbackId];
+}
 }
 
 - (void)share:(id)sender
 {
-    NSLog(@"share %@", self.currentURL.absoluteString);
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
                                                   messageAsDictionary:@{@"type":@"shareevent", @"url":self.currentURL.absoluteString}];
     [pluginResult setKeepCallback:[NSNumber numberWithBool:YES]];
