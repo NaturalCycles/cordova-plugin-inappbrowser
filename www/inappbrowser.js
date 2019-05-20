@@ -34,6 +34,7 @@
     function InAppBrowser () {
         this.channels = {
             'shareevent': channel.create('shareevent'),
+            'openinbrowser': channel.create('openinbrowser'),
             'beforeload': channel.create('beforeload'),
             'loadstart': channel.create('loadstart'),
             'loadstop': channel.create('loadstop'),
