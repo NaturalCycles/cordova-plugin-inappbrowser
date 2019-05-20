@@ -101,6 +101,7 @@ public class InAppBrowser extends CordovaPlugin {
     private static final String LOAD_STOP_EVENT = "loadstop";
     private static final String LOAD_ERROR_EVENT = "loaderror";
     private static final String SHARE_EVENT = "shareevent";
+    private static final String OPEN_IN_BROWSER = "openinbrowser";
     private static final String MESSAGE_EVENT = "message";
     private static final String CLEAR_ALL_CACHE = "clearcache";
     private static final String CLEAR_SESSION_CACHE = "clearsessioncache";
@@ -905,6 +906,15 @@ public class InAppBrowser extends CordovaPlugin {
                 browser.setOnClickListener(v -> {
                     Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(inAppWebView.getUrl()));
                     cordova.getActivity().startActivity(intent);
+
+                    try {
+                        JSONObject obj = new JSONObject();
+                        obj.put("type", OPEN_IN_BROWSER);
+                        obj.put("url", inAppWebView.getUrl());
+                        sendUpdate(obj, true);
+                    } catch (JSONException ex) {
+                        LOG.e("IN_APP_BROWSER", ex.toString());
+                    }
                 });
 
                 // Edit Text Box
