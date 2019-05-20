@@ -65,10 +65,10 @@
         <resource-file src="src/android/res/drawable-xhdpi/ic_close_black_24dp.png" target="res/drawable-xhdpi/ic_close_black_24dp.png" />
         <resource-file src="src/android/res/drawable-xxhdpi/ic_close_black_24dp.png" target="res/drawable-xxhdpi/ic_close_black_24dp.png" />
 	   
-        <resource-file src="src/android/res/drawable-hdpi/ic_open_in_app_black_24dp.png" target="res/drawable-hdpi/ic_open_in_app_black_24dp.png" />
-        <resource-file src="src/android/res/drawable-mdpi/ic_open_in_app_black_24dp.png" target="res/drawable-mdpi/ic_open_in_app_black_24dp.png" />
-        <resource-file src="src/android/res/drawable-xhdpi/ic_open_in_app_black_24dp.png" target="res/drawable-xhdpi/ic_open_in_app_black_24dp.png" />
-        <resource-file src="src/android/res/drawable-xxhdpi/ic_open_in_app_black_24dp.png" target="res/drawable-xxhdpi/ic_open_in_app_black_24dp.png" />
+        <resource-file src="src/android/res/drawable-hdpi/ic_open_in_new_black_24dp.png" target="res/drawable-hdpi/ic_open_in_new_black_24dp.png" />
+        <resource-file src="src/android/res/drawable-mdpi/ic_open_in_new_black_24dp.png" target="res/drawable-mdpi/ic_open_in_new_black_24dp.png" />
+        <resource-file src="src/android/res/drawable-xhdpi/ic_open_in_new_black_24dp.png" target="res/drawable-xhdpi/ic_open_in_new_black_24dp.png" />
+        <resource-file src="src/android/res/drawable-xxhdpi/ic_open_in_new_black_24dp.png" target="res/drawable-xxhdpi/ic_open_in_new_black_24dp.png" />
   
         <resource-file src="src/android/res/drawable-hdpi/ic_share_variant_black_24dp.png" target="res/drawable-hdpi/ic_share_variant_black_24dp.png" />
         <resource-file src="src/android/res/drawable-mdpi/ic_share_variant_black_24dp.png" target="res/drawable-mdpi/ic_share_variant_black_24dp.png" />
